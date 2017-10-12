@@ -6,8 +6,8 @@
 
 body {
     background: #f2f2f2;
-    font-family: 'Handlee', cursive;    
-    font-size: 18px;
+    font-family: 'Handlee', cursive !important;    
+    font-size: 18px !important;
     padding-top: 55px;
 }
 
@@ -16,6 +16,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1;
 }
 
 .menu {
@@ -84,4 +85,13 @@ main {
 main #img1 {
     width: 100%;
     height: 500px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0 !important;
+}
+
+.indicators {
+    background-color: #3F2E2E;
 }
