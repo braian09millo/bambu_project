@@ -27,6 +27,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
 }
 
 .menu .logo {
@@ -92,6 +93,3 @@ h1 {
     margin-top: 0 !important;
 }
 
-.indicators {
-    background-color: #3F2E2E;
-}
