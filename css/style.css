@@ -35,10 +35,12 @@ header {
     margin-right: 1em;
 }
 
-.menu .logo img {
-    vertical-align: top;
-    width: auto;
-    height: 25px;
+.menu .logo #btn-inicio {
+    font-family: 'PlaylistScript', cursive;
+    font-size: 26px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 0;
 }
 
 .menu .btn-menu {
@@ -142,10 +144,6 @@ footer {
     margin-right: 5px;
 }
 
-/* #first-icon {
-    margin-left: 130px;
-} */
-
 .localizacion {
     padding-top: 20px;
 }
@@ -179,6 +177,7 @@ footer {
 
     header .menu .logo .btn-menu {
         display: inline-block;
+        margin-top: 8px;
     }
 
     header .menu .enlaces {
@@ -190,4 +189,10 @@ footer {
     #first-icon {
         margin-left: 0;
     }
+}
+
+/* Fuente Playlist Script */
+@font-face {
+    font-family: PlaylistScript;
+    src: url(../fonts/PlaylistScript.otf);
 }

@@ -14,4 +14,19 @@ $(document).ready(function() {
     $('#btn-contacto').click(function(){
         $('html, body').animate({scrollTop: $('#Contacto').offset().top}, 2000)
     });
+
+    $('#form-contact').submit(function(e) {
+        e.preventDefault();
+        
+        var values = $(this).serialize();
+        
+        ajaxRequest = $.ajax({
+        url: "envio-mail.php",
+        type: "post",
+        data: values });
+
+        ajaxRequest.done(function (response, textStatus, jqXHR){          
+          $('#alert-mail').removeClass('hidden');
+        });            
+    });
 });
