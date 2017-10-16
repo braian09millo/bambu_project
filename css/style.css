@@ -37,7 +37,8 @@ header {
 
 .menu .logo img {
     vertical-align: top;
-    height: 22px;
+    width: auto;
+    height: 25px;
 }
 
 .menu .btn-menu {
@@ -127,6 +128,7 @@ footer {
 .redes-sociales {
     color: white;
     padding-top: 20px;
+    text-align: center;
 }
 
 #fila-redes {
@@ -137,11 +139,12 @@ footer {
 #fila-redes a {
     color: white;
     font-size: 36px;
+    margin-right: 5px;
 }
 
-#first-icon {
+/* #first-icon {
     margin-left: 130px;
-}
+} */
 
 .localizacion {
     padding-top: 20px;
@@ -185,6 +188,6 @@ footer {
     }
 
     #first-icon {
-        margin-left: 225px;
+        margin-left: 0;
     }
 }
