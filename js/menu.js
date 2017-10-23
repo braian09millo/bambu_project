@@ -1,8 +1,8 @@
 $(function() {
 
-    var header = document.getElementById('header');
-    var headroom = new Headroom(header);
-    headroom.init();
+    // var header = document.getElementById('header');
+    // var headroom = new Headroom(header);
+    // headroom.init();
 
     // Menu Responsive
     // Calculamos el ancho de la pagina
