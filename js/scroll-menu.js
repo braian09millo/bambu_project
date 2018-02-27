@@ -11,9 +11,9 @@ $(document).ready(function() {
     $('#btn-adultos').click(function(){
         $('html, body').animate({scrollTop: $('#Adultos').offset().top}, 2000)
     });
-    $('#btn-contacto').click(function(){
-        $('html, body').animate({scrollTop: $('#Contacto').offset().top}, 2000)
-    });
+    // $('#btn-contacto').click(function(){
+    //     $('html, body').animate({scrollTop: $('#Contacto').offset().top}, 2000)
+    // });
 
     $('#form-contact').submit(function(e) {
         e.preventDefault();

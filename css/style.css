@@ -32,7 +32,7 @@ header {
 
 .menu .logo {
     display: inline-block;
-    margin-right: 1em;
+    margin-right: 5em;
 }
 
 .menu .logo #btn-inicio {
@@ -69,7 +69,7 @@ header {
 }
 
 .menu .enlaces i {
-    margin-right: 5px;
+    margin-right: 1px;
 }
 
 .menu .enlaces a:hover {
@@ -103,6 +103,27 @@ h1 {
 
 .hidden {
   display: none;
+}
+
+
+.novedades-bkg {
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/fondo2.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contacto-bkg {
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/fondo1.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .parallax {
@@ -213,6 +234,13 @@ footer {
 
     #first-icon {
         margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .menu .logo {
+        display: inline-block;
+        margin-right: 1em;
     }
 }
 
