@@ -11,7 +11,7 @@ $(function() {
     var btnMenu = $('#btn-menu');
     var icono = $('#btn-menu .icono');
 
-    if(ancho < 700) {
+    if(ancho <= 910) {
         enlaces.hide();
         icono.addClass('fa-bars');
     }    
@@ -23,7 +23,7 @@ $(function() {
     });
 
     $(window).on('resize', function() {
-        if($(this).width() > 700) {
+        if($(this).width() > 910) {
             enlaces.show();
             icono.addClass('fa-times');
             icono.removeClass('fa-bars');
