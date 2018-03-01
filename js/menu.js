@@ -10,9 +10,13 @@ $(function() {
     var enlaces = $('#enlaces');
     var btnMenu = $('#btn-menu');
     var icono = $('#btn-menu .icono');
+    var btnMiniClub = $('#enlaces #btn-mini-club');
+    var btnActividades = $('#btn-actividades');
+    var btnAdultos = $('#btn-adultos');
 
     if(ancho <= 910) {
         enlaces.hide();
+        btnMiniClub.addClass('hidden');
         icono.addClass('fa-bars');
     }    
 

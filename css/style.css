@@ -237,6 +237,12 @@ footer {
         margin-left: 45px;
     }
 
+    #btn-mini-club, 
+    #btn-actividades, 
+    #btn-adultos {
+        display: none;
+    }
+
     #first-icon {
         margin-left: 0;
     }
