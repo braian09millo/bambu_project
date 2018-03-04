@@ -2,31 +2,49 @@ var app = angular.module('EmailApp', []);
 
 app.controller('EmailController', function($scope, $http) {
 
-var mostrarMensaje = false;
+$scope.mostrarMensaje = false;
 
 $scope.ocultarMensaje = function() {
-    mostrarMensaje = false;
+    $scope.mostrarMensaje = false;
+}
+
+function Limpiar() {
+    $scope.nombre = '';
+    $scope.apellido = '';
+    $scope.email = '';
+    $scope.consulta = '';
 }
 
 $scope.enviarMail = function () {
+
+    var email = {
+
+        nombre: $scope.nombre,
+        apellido: $scope.apellido,
+        mail: $scope.email,
+        mensaje: $scope.consulta
+
+    }
 
     $http
     (
         {
             method: 'POST',
-            url:'enviarMail.php',
-            data: 'nombre=' + $scope.nombre + '&email=' + $scope.email + '&consulta=' + $scope.consulta,
+            url:'../templates/enviarMail.php',
+            data: JSON.stringify(email),
+            dataType: "json",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }
     )
     .then(function(data, status) {
         console.log(data);
         console.log(status);
-        mostrarMensaje = true;
-        $scope.mensaje = "Gracias! Nos pondremos en contacto con usted a la brevedad";
+        // mostrarMensaje = true;
+        alert("Gracias! Nos pondremos en contacto con usted a la brevedad");
+        Limpiar();
     }, function(data, status) {
-        mostrarMensaje = true;
-        $scope.mensaje = "Hubo un error. Intente más tarde...";
+        // mostrarMensaje = true;
+        alert("Hubo un error. Intente más tarde...");
     });
 
 }
