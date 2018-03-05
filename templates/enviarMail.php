@@ -3,7 +3,7 @@
   $apellido = htmlspecialchars($_POST['apellido']);
   $email = htmlspecialchars($_POST['email']);
   $mensaje = htmlspecialchars($_POST['mensaje']);
-  $destino = "braian09.millo@gmail.com";
+  $destino = "bambuarteymovimiento@gmail.com";
   $contenido = "Asunto: Consulta"
               . "\nNombre: " . $nombre
               . "\nApellido: ". $apellido

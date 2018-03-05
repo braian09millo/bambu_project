@@ -13,6 +13,13 @@ $(function() {
     var btnMiniClub = $('#enlaces #btn-mini-club');
     var btnActividades = $('#btn-actividades');
     var btnAdultos = $('#btn-adultos');
+    var faceNov = $('#faceLive');
+
+    if(ancho <= 480) {
+        faceNov.addClass('col-xs-offset-2');
+    } else {
+        faceNov.removeClass('col-xs-offset-2');
+    }
 
     if(ancho <= 910) {
         enlaces.hide();
