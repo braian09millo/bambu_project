@@ -207,6 +207,18 @@ footer {
     transform: translateY(-100%);
 }
 
+td {
+    text-align: center;
+}
+
+tr {
+    background-color: aliceblue;
+}
+
+.bkgHorarios {
+    background: url('../img/blackboard.jpg');
+}
+
 /* Media queries */
 @media screen and (max-width: 910px) {
     header .menu {
