@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BambuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="actividades">
+    <Key>
+      <PropertyRef Name="act_ident" />
+    </Key>
+    <Property Name="act_ident" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="act_descr" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="horarios">
+    <Key>
+      <PropertyRef Name="hor_ident" />
+    </Key>
+    <Property Name="hor_ident" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hor_orden" Type="int" Nullable="false" />
+    <Property Name="hor_dia1" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="hor_activ1" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="hor_horin1" Type="varchar" MaxLength="10" />
+    <Property Name="hor_horfi1" Type="varchar" MaxLength="10" />
+    <Property Name="hor_color1" Type="varchar" MaxLength="50" />
+    <Property Name="hor_dia2" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="hor_activ2" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="hor_horin2" Type="varchar" MaxLength="10" />
+    <Property Name="hor_horfi2" Type="varchar" MaxLength="10" />
+    <Property Name="hor_color2" Type="varchar" MaxLength="50" />
+    <Property Name="hor_dia3" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="hor_activ3" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="hor_horin3" Type="varchar" MaxLength="10" />
+    <Property Name="hor_horfi3" Type="varchar" MaxLength="10" />
+    <Property Name="hor_color3" Type="varchar" MaxLength="50" />
+    <Property Name="hor_dia4" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="hor_activ4" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="hor_horin4" Type="varchar" MaxLength="10" />
+    <Property Name="hor_horfi4" Type="varchar" MaxLength="10" />
+    <Property Name="hor_color4" Type="varchar" MaxLength="50" />
+    <Property Name="hor_dia5" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="hor_activ5" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="hor_horin5" Type="varchar" MaxLength="10" />
+    <Property Name="hor_horfi5" Type="varchar" MaxLength="10" />
+    <Property Name="hor_color5" Type="varchar" MaxLength="50" />
+    <Property Name="hor_dia6" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="hor_activ6" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="hor_horin6" Type="varchar" MaxLength="10" />
+    <Property Name="hor_horfi6" Type="varchar" MaxLength="10" />
+    <Property Name="hor_color6" Type="varchar" MaxLength="50" />
+    <Property Name="hor_salon" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="novedades">
+    <Key>
+      <PropertyRef Name="nov_ident" />
+    </Key>
+    <Property Name="nov_ident" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nov_nuimg" Type="int" Nullable="false" />
+    <Property Name="nov_titulo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="nov_descr" Type="varchar" MaxLength="255" />
+    <Property Name="nov_imagen" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="nov_titulo2" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="principal">
+    <Key>
+      <PropertyRef Name="pri_ident" />
+    </Key>
+    <Property Name="pri_ident" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pri_nusec" Type="int" Nullable="false" />
+    <Property Name="pri_secci" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="pri_imagen" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="usu_ident" />
+    </Key>
+    <Property Name="usu_ident" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usu_user" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="usu_pass" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="BambuModelStoreContainer">
+    <EntitySet Name="actividades" EntityType="Self.actividades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="horarios" EntityType="Self.horarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="novedades" EntityType="Self.novedades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="principal" EntityType="Self.principal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BambuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="actividades">
+          <Key>
+            <PropertyRef Name="act_ident" />
+          </Key>
+          <Property Name="act_ident" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="act_descr" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="horarios">
+          <Key>
+            <PropertyRef Name="hor_ident" />
+          </Key>
+          <Property Name="hor_ident" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hor_orden" Type="int" Nullable="false" />
+          <Property Name="hor_dia1" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="hor_activ1" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="hor_horin1" Type="varchar" MaxLength="10" />
+          <Property Name="hor_horfi1" Type="varchar" MaxLength="10" />
+          <Property Name="hor_color1" Type="varchar" MaxLength="50" />
+          <Property Name="hor_dia2" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="hor_activ2" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="hor_horin2" Type="varchar" MaxLength="10" />
+          <Property Name="hor_horfi2" Type="varchar" MaxLength="10" />
+          <Property Name="hor_color2" Type="varchar" MaxLength="50" />
+          <Property Name="hor_dia3" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="hor_activ3" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="hor_horin3" Type="varchar" MaxLength="10" />
+          <Property Name="hor_horfi3" Type="varchar" MaxLength="10" />
+          <Property Name="hor_color3" Type="varchar" MaxLength="50" />
+          <Property Name="hor_dia4" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="hor_activ4" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="hor_horin4" Type="varchar" MaxLength="10" />
+          <Property Name="hor_horfi4" Type="varchar" MaxLength="10" />
+          <Property Name="hor_color4" Type="varchar" MaxLength="50" />
+          <Property Name="hor_dia5" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="hor_activ5" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="hor_horin5" Type="varchar" MaxLength="10" />
+          <Property Name="hor_horfi5" Type="varchar" MaxLength="10" />
+          <Property Name="hor_color5" Type="varchar" MaxLength="50" />
+          <Property Name="hor_dia6" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="hor_activ6" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="hor_horin6" Type="varchar" MaxLength="10" />
+          <Property Name="hor_horfi6" Type="varchar" MaxLength="10" />
+          <Property Name="hor_color6" Type="varchar" MaxLength="50" />
+          <Property Name="hor_salon" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="novedades">
+          <Key>
+            <PropertyRef Name="nov_ident" />
+          </Key>
+          <Property Name="nov_ident" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nov_nuimg" Type="int" Nullable="false" />
+          <Property Name="nov_titulo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nov_descr" Type="varchar" MaxLength="255" />
+          <Property Name="nov_imagen" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nov_titulo2" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="principal">
+          <Key>
+            <PropertyRef Name="pri_ident" />
+          </Key>
+          <Property Name="pri_ident" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pri_nusec" Type="int" Nullable="false" />
+          <Property Name="pri_secci" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="pri_imagen" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="usu_ident" />
+          </Key>
+          <Property Name="usu_ident" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usu_user" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="usu_pass" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BambuModelStoreContainer">
+          <EntitySet Name="actividades" EntityType="Self.actividades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="horarios" EntityType="Self.horarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="novedades" EntityType="Self.novedades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="principal" EntityType="Self.principal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BambuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="horario">
+          <Key>
+            <PropertyRef Name="hor_ident" />
+          </Key>
+          <Property Name="hor_ident" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hor_orden" Type="Int32" Nullable="false" />
+          <Property Name="hor_dia1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hor_activ1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hor_horin1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hor_horfi1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hor_color1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hor_dia2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hor_activ2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hor_horin2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hor_horfi2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hor_color2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hor_dia3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hor_activ3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hor_horin3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hor_horfi3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hor_color3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hor_dia4" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hor_activ4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hor_horin4" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hor_horfi4" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hor_color4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hor_dia5" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hor_activ5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hor_horin5" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hor_horfi5" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hor_color5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hor_dia6" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hor_activ6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hor_horin6" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hor_horfi6" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hor_color6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hor_salon" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="novedade">
+          <Key>
+            <PropertyRef Name="nov_ident" />
+          </Key>
+          <Property Name="nov_ident" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nov_nuimg" Type="Int32" Nullable="false" />
+          <Property Name="nov_titulo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nov_descr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="nov_imagen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nov_titulo2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="principal">
+          <Key>
+            <PropertyRef Name="pri_ident" />
+          </Key>
+          <Property Name="pri_ident" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pri_nusec" Type="Int32" Nullable="false" />
+          <Property Name="pri_secci" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pri_imagen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BambuEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="horarios" EntityType="Self.horario" />
+          <EntitySet Name="novedades" EntityType="Self.novedade" />
+          <EntitySet Name="principals" EntityType="Self.principal" />
+          <EntitySet Name="usuarios" EntityType="BambuModel.usuario" />
+          <EntitySet Name="actividades" EntityType="BambuModel.actividade" />
+        </EntityContainer>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="usu_ident" />
+          </Key>
+          <Property Name="usu_ident" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usu_user" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="usu_pass" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="actividade">
+          <Key>
+            <PropertyRef Name="act_ident" />
+          </Key>
+          <Property Name="act_ident" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="act_descr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BambuModelStoreContainer" CdmEntityContainer="BambuEntities">
+          <EntitySetMapping Name="horarios">
+            <EntityTypeMapping TypeName="BambuModel.horario">
+              <MappingFragment StoreEntitySet="horarios">
+                <ScalarProperty Name="hor_ident" ColumnName="hor_ident" />
+                <ScalarProperty Name="hor_orden" ColumnName="hor_orden" />
+                <ScalarProperty Name="hor_dia1" ColumnName="hor_dia1" />
+                <ScalarProperty Name="hor_activ1" ColumnName="hor_activ1" />
+                <ScalarProperty Name="hor_horin1" ColumnName="hor_horin1" />
+                <ScalarProperty Name="hor_horfi1" ColumnName="hor_horfi1" />
+                <ScalarProperty Name="hor_color1" ColumnName="hor_color1" />
+                <ScalarProperty Name="hor_dia2" ColumnName="hor_dia2" />
+                <ScalarProperty Name="hor_activ2" ColumnName="hor_activ2" />
+                <ScalarProperty Name="hor_horin2" ColumnName="hor_horin2" />
+                <ScalarProperty Name="hor_horfi2" ColumnName="hor_horfi2" />
+                <ScalarProperty Name="hor_color2" ColumnName="hor_color2" />
+                <ScalarProperty Name="hor_dia3" ColumnName="hor_dia3" />
+                <ScalarProperty Name="hor_activ3" ColumnName="hor_activ3" />
+                <ScalarProperty Name="hor_horin3" ColumnName="hor_horin3" />
+                <ScalarProperty Name="hor_horfi3" ColumnName="hor_horfi3" />
+                <ScalarProperty Name="hor_color3" ColumnName="hor_color3" />
+                <ScalarProperty Name="hor_dia4" ColumnName="hor_dia4" />
+                <ScalarProperty Name="hor_activ4" ColumnName="hor_activ4" />
+                <ScalarProperty Name="hor_horin4" ColumnName="hor_horin4" />
+                <ScalarProperty Name="hor_horfi4" ColumnName="hor_horfi4" />
+                <ScalarProperty Name="hor_color4" ColumnName="hor_color4" />
+                <ScalarProperty Name="hor_dia5" ColumnName="hor_dia5" />
+                <ScalarProperty Name="hor_activ5" ColumnName="hor_activ5" />
+                <ScalarProperty Name="hor_horin5" ColumnName="hor_horin5" />
+                <ScalarProperty Name="hor_horfi5" ColumnName="hor_horfi5" />
+                <ScalarProperty Name="hor_color5" ColumnName="hor_color5" />
+                <ScalarProperty Name="hor_dia6" ColumnName="hor_dia6" />
+                <ScalarProperty Name="hor_activ6" ColumnName="hor_activ6" />
+                <ScalarProperty Name="hor_horin6" ColumnName="hor_horin6" />
+                <ScalarProperty Name="hor_horfi6" ColumnName="hor_horfi6" />
+                <ScalarProperty Name="hor_color6" ColumnName="hor_color6" />
+                <ScalarProperty Name="hor_salon" ColumnName="hor_salon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="novedades">
+            <EntityTypeMapping TypeName="BambuModel.novedade">
+              <MappingFragment StoreEntitySet="novedades">
+                <ScalarProperty Name="nov_titulo2" ColumnName="nov_titulo2" />
+                <ScalarProperty Name="nov_ident" ColumnName="nov_ident" />
+                <ScalarProperty Name="nov_nuimg" ColumnName="nov_nuimg" />
+                <ScalarProperty Name="nov_titulo" ColumnName="nov_titulo" />
+                <ScalarProperty Name="nov_descr" ColumnName="nov_descr" />
+                <ScalarProperty Name="nov_imagen" ColumnName="nov_imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="principals">
+            <EntityTypeMapping TypeName="BambuModel.principal">
+              <MappingFragment StoreEntitySet="principal">
+                <ScalarProperty Name="pri_ident" ColumnName="pri_ident" />
+                <ScalarProperty Name="pri_nusec" ColumnName="pri_nusec" />
+                <ScalarProperty Name="pri_secci" ColumnName="pri_secci" />
+                <ScalarProperty Name="pri_imagen" ColumnName="pri_imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="BambuModel.usuario">
+              <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="usu_pass" ColumnName="usu_pass" />
+                <ScalarProperty Name="usu_user" ColumnName="usu_user" />
+                <ScalarProperty Name="usu_ident" ColumnName="usu_ident" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="actividades">
+            <EntityTypeMapping TypeName="BambuModel.actividade">
+              <MappingFragment StoreEntitySet="actividades">
+                <ScalarProperty Name="act_descr" ColumnName="act_descr" />
+                <ScalarProperty Name="act_ident" ColumnName="act_ident" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

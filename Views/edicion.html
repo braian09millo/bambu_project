@@ -1,0 +1,116 @@
+﻿<br /><br />
+<div class="container" ng-controller="EdicionController">
+    <ul class="nav nav-tabs" role="tablist">
+        <!--<li role="presentation" class="active"><a data-target="#principal" style="cursor: pointer;" aria-controls="principal" role="tab" data-toggle="tab">Principal</a></li>-->
+        <li role="presentation" class="active"><a data-target="#novedades" style="cursor: pointer;" aria-controls="novedades" role="tab" data-toggle="tab">Novedades</a></li>
+        <li role="presentation"><a data-target="#horarios" style="cursor: pointer;" aria-controls="horarios" role="tab" data-toggle="tab">Horarios</a></li>
+    </ul>
+    <div class="tab-content">
+        <!--<div role="tabpanel" class="tab-pane active" id="principal">       
+        </div>-->
+        <div role="tabpanel" class="tab-pane active" id="novedades">
+            <h3 class="page-header">Agregar imágenes</h3>
+            <div class="row">
+                <div class="col-lg-4">
+                    <input type="file" id="file" name="file" ng-files="getTheFiles($files)"/>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-lg-2">
+                    <button class="btn btn-block btn-primary" ng-click="GuardarImagen()">Guardar</button>
+                </div>
+            </div>
+            <br />
+            <h3 class="page-header">Modificar títulos</h3>
+            <form name="NovedadesForm">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control" placeholder="Título principal" ng-model="titulo1"/>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control" placeholder="Título secundario" ng-model="titulo2"/>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <textarea style="resize:none;" ng-model="descripcion" class="form-control" placeholder="Descripción"></textarea>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-6">
+                        <button class="btn btn-success pull-right" ng-click="ModificarNovedades()" >Modificar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="horarios">
+            <h3 class="page-header">Modificar horarios</h3>
+            <div class="row">
+                <form name="HorariosForm">
+                    <div class="col-lg-2">
+                        <select class="form-control" ng-model="filaSeleccionada" required>
+                            <option selected="selected" value="">Elija una fila...</option>
+                            <option value="1">Fila 1</option>
+                            <option value="2">Fila 2</option>
+                            <option value="3">Fila 3</option>
+                            <option value="4">Fila 4</option>
+                            <option value="5">Fila 5</option>
+                            <option value="6">Fila 6</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2">
+                        <select class="form-control" ng-model="salonSeleccionado" required>
+                            <option selected="selected" value="">Elija un salón</option>
+                            <option value="BAMBU">Bambú</option>
+                            <option value="PASIONARIA">Pasionaria</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2">
+                        <select class="form-control" ng-model="diaSeleccionado" required>
+                            <option selected="selected" value="">Elija un día...</option>
+                            <option value="Lunes">Lunes</option>
+                            <option value="Martes">Martes</option>
+                            <option value="Miércoles">Miércoles</option>
+                            <option value="Jueves">Jueves</option>
+                            <option value="Viernes">Viernes</option>
+                            <option value="Sábado">Sábado</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2">
+                        <select class="form-control" ng-model="actSeleccionada" ng-options="act for act in actividades" required>
+                            <option selected="selected" value="">Elija una actividad...</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-1">
+                        <input type="text" class="form-control" ng-model="horaInicio" placeholder="Inicio" required/>
+                    </div>
+                    <div class="col-lg-1">
+                        <input type="text" class="form-control" ng-model="horaFin" placeholder="Fin" required/>
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="btn btn-block btn-info" ng-click="ModificarHorarios()">Modificar</button>
+                    </div>
+                </form>
+            </div>
+            <br />
+            <h3 class="page-header">Agregar una nueva actividad</h3>
+            <div class="row">
+                <form>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" ng-model="actividad" onkeyup="this.value = this.value.toUpperCase();" placeholder="Actividad" required/>
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="btn btn-block btn-success" ng-click="AgregarActividad()">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br /><br />

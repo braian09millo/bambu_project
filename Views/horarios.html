@@ -1,0 +1,78 @@
+﻿<br />
+<div class="container bkgHorarios" ng-controller="HorariosController">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a id="bambu" data-target="#salonBambu" aria-controls="salonBambu" role="tab" data-toggle="tab">Salón Bambú</a></li>
+        <li role="presentation"><a id="pasionaria" data-target="#salonPasionaria" aria-controls="salonPasionaria" role="tab" data-toggle="tab">Salón Pasionaria</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="salonBambu">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <td>Lunes</td>
+                            <td>Martes</td>
+                            <td>Miércoles</td>
+                            <td>Jueves</td>
+                            <td>Viernes</td>
+                            <td>Sábado</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="h in horariosBambu">
+                            <td style="color: {{h.hor_color1}}">{{h.hor_activ1}} <br><small>{{h.hor_horin1}} - {{h.hor_horfi1}}</small></td>
+                            <td style="color: {{h.hor_color2}}">{{h.hor_activ2}} <br><small>{{h.hor_horin2}} - {{h.hor_horfi2}}</small></td>
+                            <td style="color: {{h.hor_color3}}">{{h.hor_activ3}} <br><small>{{h.hor_horin3}} - {{h.hor_horfi3}}</small></td>
+                            <td style="color: {{h.hor_color4}}">{{h.hor_activ4}} <br><small>{{h.hor_horin4}} - {{h.hor_horfi4}}</small></td>
+                            <td style="color: {{h.hor_color5}}">{{h.hor_activ5}} <br><small>{{h.hor_horin5}} - {{h.hor_horfi5}}</small></td>
+                            <td style="color: {{h.hor_color6}}">{{h.hor_activ6}} <br><small>{{h.hor_horin6}} - {{h.hor_horfi6}}</small></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="salonPasionaria">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <td>Lunes</td>
+                            <td>Martes</td>
+                            <td>Miércoles</td>
+                            <td>Jueves</td>
+                            <td>Viernes</td>
+                            <td>Sábado</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="horario in horariosPasionaria">
+                            <td style="color: {{horario.hor_color}}">{{horario.hor_activ}} <br><small>{{horario.hor_horin}} a {{horario.hor_horin}}</small></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br /><br />
+<script>
+    $(document).ready(function () {
+
+        var ancho = $(window).width();
+        var agregadoPasionaria = false;
+        var agregadoBambu = false;
+
+        $("#pasionaria").click(function () {
+            if (ancho > 950 && !agregadoPasionaria) {
+                for (i = 0; i < 9; i++) {
+                    $("#salonPasionaria").append("<br>");
+                }
+                agregadoPasionaria = true;
+            }
+        });
+
+        $(window).load(function () {
+            $("#salonBambu").append("<br><br>");
+        });
+    });
+</script>

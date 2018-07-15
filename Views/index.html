@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html ng-app="BambuApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Bambú - Arte y Movimiento</title>
+	<meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+    <link rel="stylesheet" href="../Content/Site.css">
+    <link rel="stylesheet" href="../Content/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body class="{{fondo}}" ng-controller="IndexController">
+
+    <!-- MENU -->
+    <header id="header">
+        <nav class="menu">
+            <div class="logo">
+                <a id="btn-inicio" ng-click="cambiarBodyClass('', true)" href="#!home">Bambú</a>
+                <button id="btn-menu" class="btn-menu btn-link"><i class="icono fa fa-bars" aria-hidden="true"></i></button>
+            </div>
+            <div id="enlaces" class="enlaces">
+                <a id="btn-actividades" ng-show="esHome"><i class="fa fa-futbol-o" aria-hidden="true"></i>&nbsp;Actividades</a>
+                <a id="btn-adultos" ng-show="esHome"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;Adultos</a>
+                <a id="btn-novedades" ng-click="cambiarBodyClass('novedades-bkg', false)" href="#!novedades"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Novedades</a>
+                <a id="btn-horarios" ng-click="cambiarBodyClass('bkgHorarios', false)" href="#!horarios"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;Horarios</a>
+                <a id="btn-contacto" ng-click="cambiarBodyClass('contacto-bkg', false)" href="#!contacto"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Contacto</a>
+                <a id="btn-login" ng-click="cambiarBodyClass('', false)" href="#!login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- VISTAS -->
+    <ng-view></ng-view>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-4 col-lg-4">
+                    <div class="info-bambu">
+                        <h3>Info:</h3>
+                        <ul>
+                            <li><i class="fa fa-address-book" aria-hidden="true"></i> Dirección: 3 de Febrero 3027, San Andrés</li>
+                            <li><i class="fa fa-phone" aria-hidden="true"></i> Teléfono: 4755-7417</li>
+                            <li><i class="fa fa-envelope" aria-hidden="true"></i> Mail:<a id="mail" href="mailto:bambuarteymovimiento@gmail.com.ar"> bambuarteymovimiento@gmail.com.ar</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4 col-lg-4">
+                    <div class="localizacion">
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.4580739863636!2d-58.53977188514889!3d-34.56727418046893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb76955fc00bd%3A0xed94c036466cb3df!2s3+de+Febrero+3027%2C+San+Andres%2C+Buenos+Aires!5e0!3m2!1ses-419!2sar!4v1508128907693" width="100%" height="150px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4 col-lg-4">
+                    <div class="redes-sociales">
+                        <h3 class="text-center">Puedes encontrarnos en:</h3>
+                        <div id="fila-redes">
+                            <a href="https://www.facebook.com/bambu.bambu.5205622" id="first-icon" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                            <a href="https://www.instagram.com/bambu.arteymovimiento/?hl=es-la" target="_blank"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.min.js"></script>
+    <script src="../Scripts/Module.js"></script>
+    <script src="../Scripts/Services.js"></script>
+    <script src="../Scripts/Controllers.js"></script>
+    <script src="../Scripts/Directives.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="../Scripts/headroom.min.js"></script>
+    <script src="../Scripts/menu.js"></script>
+    <script src="../Scripts/scroll-menu.js"></script>
+</body>
+</html>
